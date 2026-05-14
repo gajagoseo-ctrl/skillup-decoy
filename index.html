@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp Academy - Kursus Digital Marketing & Bisnis Online</title>
+    <meta name="description" content="Platform belajar digital marketing, bisnis online, dan entrepreneurship terpercaya. Ribuan alumni telah sukses membangun bisnis mereka.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #dbeafe;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--white);
+            color: var(--gray-700);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 22px;
+            color: var(--secondary);
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray-600);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gray-700);
+            border: 1.5px solid var(--gray-300);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .btn-lg {
+            padding: 16px 36px;
+            font-size: 16px;
+            border-radius: var(--radius-lg);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #faf5ff 50%, #fff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            width: fit-content;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--gray-500);
+            margin-bottom: 32px;
+            line-height: 1.7;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .hero-stat h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        .hero-stat p {
+            font-size: 13px;
+            color: var(--gray-400);
+            margin: 0;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-100);
+        }
+
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .hero-card-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .hero-card-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .hero-card-info p {
+            font-size: 13px;
+            color: var(--gray-400);
+            margin: 0;
+        }
+
+        .hero-chart {
+            height: 160px;
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            border-radius: 6px 6px 0 0;
+            background: linear-gradient(to top, var(--primary), #7c3aed);
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+
+        .chart-bar:nth-child(1) { height: 45%; opacity: 0.4; }
+        .chart-bar:nth-child(2) { height: 62%; opacity: 0.5; }
+        .chart-bar:nth-child(3) { height: 38%; opacity: 0.35; }
+        .chart-bar:nth-child(4) { height: 78%; opacity: 0.65; }
+        .chart-bar:nth-child(5) { height: 55%; opacity: 0.5; }
+        .chart-bar:nth-child(6) { height: 92%; opacity: 0.85; }
+        .chart-bar:nth-child(7) { height: 68%; opacity: 0.6; }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .tag-blue {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .tag-green {
+            background: #d1fae5;
+            color: var(--success);
+        }
+
+        .tag-purple {
+            background: #f3e8ff;
+            color: #7c3aed;
+        }
+
+        /* ===== TRUST BADGES ===== */
+        .trust {
+            padding: 40px 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .trust-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .trust-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .trust-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gray-300);
+            transition: color 0.3s;
+        }
+
+        /* ===== FEATURES ===== */
+        .features {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            font-size: 17px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            padding: 40px 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-100);
+            background: var(--white);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), #7c3aed);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .feature-card:hover {
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+            transform: translateY(-4px);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ===== COURSES ===== */
+        .courses {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            transition: all 0.4s;
+        }
+
+        .course-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-6px);
+            border-color: transparent;
+        }
+
+        .course-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-light), #f3e8ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, rgba(255,255,255,0.5), transparent);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .course-body {
+            padding: 24px;
+        }
+
+        .course-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .course-category {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+        }
+
+        .course-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .course-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .course-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-100);
+            margin-top: 16px;
+        }
+
+        .course-price {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        .course-price .old {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--gray-400);
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+
+        .course-students {
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-100);
+            background: var(--white);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-size: 80px;
+            color: var(--gray-100);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-stars span {
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .testimonial-info h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .testimonial-info p {
+            font-size: 12px;
+            color: var(--gray-400);
+            margin: 0;
+        }
+
+        /* ===== PRICING ===== */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            padding: 40px 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary), var(--shadow-xl);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+            padding: 6px 20px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .pricing-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .desc {
+            font-size: 14px;
+            color: var(--gray-400);
+            margin-bottom: 24px;
+        }
+
+        .pricing-amount {
+            margin-bottom: 32px;
+        }
+
+        .pricing-amount .currency {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--secondary);
+            vertical-align: top;
+        }
+
+        .pricing-amount .price {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1;
+        }
+
+        .pricing-amount .period {
+            font-size: 14px;
+            color: var(--gray-400);
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            font-size: 14px;
+            color: var(--gray-600);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--gray-50);
+        }
+
+        .pricing-features li::before {
+            content: '\2713';
+            width: 22px;
+            height: 22px;
+            background: #d1fae5;
+            color: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .faq-question {
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--secondary);
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-question .icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--gray-500);
+            transition: all 0.3s;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-item.active .faq-question .icon {
+            transform: rotate(45deg);
+            background: var(--primary);
+            color: white;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 24px;
+        }
+
+        .faq-answer p {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.8;
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, #1e1b4b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-inner {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 40px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 64px 0 32px;
+            background: var(--secondary);
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-links h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ===== MOBILE ===== */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 40px; }
+            .features-grid,
+            .courses-grid,
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .pricing-card.featured { transform: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .nav-cta .btn-outline { display: none; }
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero { padding: 120px 0 60px; }
+            .hero h1 { font-size: 32px; }
+            .hero-stats { gap: 20px; }
+            .features-grid,
+            .courses-grid,
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .section-header h2 { font-size: 28px; }
+            .cta h2 { font-size: 28px; }
+            .trust-inner { gap: 24px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="#" class="logo">
+                    <div class="logo-icon">S</div>
+                    SkillUp Academy
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#features">Fitur</a></li>
+                    <li><a href="#courses">Kursus</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#pricing">Harga</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#" class="btn btn-outline">Masuk</a>
+                    <a href="#pricing" class="btn btn-primary">Daftar Sekarang</a>
+                </div>
+                <button class="mobile-menu-btn">&#9776;</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <div class="pulse"></div>
+                        2,500+ Alumni Telah Sukses
+                    </div>
+                    <h1>Belajar <span>Digital Marketing</span> & Bangun Bisnis Online-mu</h1>
+                    <p>Kursus lengkap dari dasar hingga mahir. Diajar oleh praktisi berpengalaman dengan kurikulum yang selalu update mengikuti tren terbaru.</p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                        <a href="#pricing" class="btn btn-primary btn-lg">Mulai Belajar Sekarang</a>
+                        <a href="#courses" class="btn btn-outline btn-lg">Lihat Kursus</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <h3>2,500+</h3>
+                            <p>Alumni Sukses</p>
+                        </div>
+                        <div class="hero-stat">
+                            <h3>50+</h3>
+                            <p>Kursus Aktif</p>
+                        </div>
+                        <div class="hero-stat">
+                            <h3>4.9</h3>
+                            <p>Rating Rata-rata</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="hero-card-header">
+                            <div class="hero-card-avatar">R</div>
+                            <div class="hero-card-info">
+                                <h4>Revenue Bulan Ini</h4>
+                                <p>Update real-time</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+                            <span style="font-size: 36px; font-weight: 800; color: var(--secondary);">Rp 47.5jt</span>
+                            <span style="font-size: 14px; color: var(--success); font-weight: 600;">+23.5%</span>
+                        </div>
+                        <div class="hero-chart">
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                        </div>
+                        <div class="hero-tags">
+                            <span class="tag tag-blue">Digital Marketing</span>
+                            <span class="tag tag-green">E-Commerce</span>
+                            <span class="tag tag-purple">SEO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUST ===== -->
+    <section class="trust">
+        <div class="container">
+            <div class="trust-inner">
+                <span class="trust-label">Dipercaya oleh learner dari</span>
+                <span class="trust-logo">Tokopedia</span>
+                <span class="trust-logo">Gojek</span>
+                <span class="trust-logo">Bukalapak</span>
+                <span class="trust-logo">Shopee</span>
+                <span class="trust-logo">Grab</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Kenapa Belajar di SkillUp Academy?</h2>
+                <p>Platform belajar terlengkap dengan pendampingan full support sampai kamu benar-benar bisa menghasilkan</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon" style="background: #dbeafe;">&#127891;</div>
+                    <h3>Kurikulum Praktis</h3>
+                    <p>Tidak hanya teori. Setiap materi langsung dipraktikkan dengan studi kasus nyata dari bisnis yang benar-benar berjalan.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon" style="background: #d1fae5;">&#127758;</div>
+                    <h3>Mentor Berpengalaman</h3>
+                    <p>Diajar langsung oleh praktisi dengan pengalaman 5-10 tahun di bidang digital marketing dan e-commerce.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon" style="background: #f3e8ff;">&#128161;</div>
+                    <h3>Selalu Update</h3>
+                    <p>Kurikulum diupdate setiap bulan mengikuti perubahan algoritma dan tren digital marketing terbaru.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon" style="background: #fef3c7;">&#128172;</div>
+                    <h3>Komunitas Aktif</h3>
+                    <p>Akses ke grup komunitas eksklusif untuk networking, sharing, dan tanya jawab 24/7 dengan mentor.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon" style="background: #fce7f3;">&#127942;</div>
+                    <h3>Sertifikat Resmi</h3>
+                    <p>Dapatkan sertifikat penyelesaian yang bisa digunakan untuk melamar kerja atau menarik klien.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon" style="background: #e0e7ff;">&#128218;</div>
+                    <h3>Akses Seumur Hidup</h3>
+                    <p>Bayar sekali, akses selamanya. Termasuk semua update materi dan kursus baru di masa depan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COURSES ===== -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Kursus Populer</h2>
+                <p>Pilih kursus sesuai kebutuhanmu. Dari pemula sampai advanced, semua ada.</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card reveal reveal-delay-1">
+                    <div class="course-image">
+                        <span>&#128200;</span>
+                        <span class="course-badge">POPULER</span>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-meta">
+                            <span class="course-category">Marketing</span>
+                            <div class="course-rating">
+                                <span>&#9733;</span> 4.9 (328)
+                            </div>
+                        </div>
+                        <h3>Digital Marketing Mastery: Dari Nol Sampai Bisa</h3>
+                        <p style="font-size: 13px; color: var(--gray-400); margin-bottom: 12px;">24 Modul &middot; 48 Video &middot; 12 Jam Total</p>
+                        <div class="course-footer">
+                            <div class="course-price">
+                                Rp299rb <span class="old">Rp1.2jt</span>
+                            </div>
+                            <div class="course-students">1,240 siswa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card reveal reveal-delay-2">
+                    <div class="course-image" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
+                        <span>&#128722;</span>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-meta">
+                            <span class="course-category" style="background: #d1fae5; color: #059669;">E-Commerce</span>
+                            <div class="course-rating">
+                                <span>&#9733;</span> 4.8 (256)
+                            </div>
+                        </div>
+                        <h3>Toko Online Blueprint: Sukses Jualan di Shopee & TikTok</h3>
+                        <p style="font-size: 13px; color: var(--gray-400); margin-bottom: 12px;">18 Modul &middot; 36 Video &middot; 10 Jam Total</p>
+                        <div class="course-footer">
+                            <div class="course-price">
+                                Rp249rb <span class="old">Rp999rb</span>
+                            </div>
+                            <div class="course-students">892 siswa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card reveal reveal-delay-3">
+                    <div class="course-image" style="background: linear-gradient(135deg, #f3e8ff, #e9d5ff);">
+                        <span>&#128270;</span>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-meta">
+                            <span class="course-category" style="background: #f3e8ff; color: #7c3aed;">SEO</span>
+                            <div class="course-rating">
+                                <span>&#9733;</span> 4.9 (189)
+                            </div>
+                        </div>
+                        <h3>SEO Advanced: Ranking #1 Google dalam 90 Hari</h3>
+                        <p style="font-size: 13px; color: var(--gray-400); margin-bottom: 12px;">20 Modul &middot; 40 Video &middot; 11 Jam Total</p>
+                        <div class="course-footer">
+                            <div class="course-price">
+                                Rp349rb <span class="old">Rp1.5jt</span>
+                            </div>
+                            <div class="course-students">567 siswa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Apa Kata Alumni Kami?</h2>
+                <p>Ribuan orang telah mengubah hidup mereka melalui kursus kami</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-stars">
+                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                    </div>
+                    <p class="testimonial-text">Saya awalnya tidak tahu apa-apa tentang digital marketing. Setelah ikut kursus di SkillUp Academy dalam 3 bulan, omset toko online saya naik 400%. Materinya sangat praktis dan mudah dipahami.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AD</div>
+                        <div class="testimonial-info">
+                            <h4>Ahmad Dhani</h4>
+                            <p>Pemilik Toko Online, Jakarta</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="testimonial-stars">
+                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                    </div>
+                    <p class="testimonial-text">Komunitasnya sangat supportive. Saya bisa tanya kapan saja dan selalu ada yang menjawab. Mentor-nya juga sangat responsive. Worth every penny!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SM</div>
+                        <div class="testimonial-info">
+                            <h4>Siti Maryam</h4>
+                            <p>Freelance Marketer, Bandung</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-3">
+                    <div class="testimonial-stars">
+                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                    </div>
+                    <p class="testimonial-text">Saya sudah coba banyak kursus online tapi SkillUp Academy yang paling lengkap. Update materinya rutin, jadi ilmu saya tidak ketinggalan zaman. Sangat recommended!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">BW</div>
+                        <div class="testimonial-info">
+                            <h4>Budi Wijaya</h4>
+                            <p>Digital Agency Owner, Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Pilih Paket Belajarmu</h2>
+                <p>Investasi terbaik untuk masa depan karir dan bisnismu</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card reveal reveal-delay-1">
+                    <h3>Starter</h3>
+                    <p class="desc">Cocok untuk pemula yang ingin mencoba</p>
+                    <div class="pricing-amount">
+                        <span class="currency">Rp</span>
+                        <span class="price">99rb</span>
+                        <span class="period">/bulan</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Akses 5 kursus dasar</li>
+                        <li>Video on-demand</li>
+                        <li>Grup komunitas</li>
+                        <li>Sertifikat digital</li>
+                        <li>Support email</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">Mulai Starter</button>
+                </div>
+                <div class="pricing-card featured reveal reveal-delay-2">
+                    <span class="pricing-badge">PALING LARIS</span>
+                    <h3>Professional</h3>
+                    <p class="desc">Untuk yang serius ingin hasil maksimal</p>
+                    <div class="pricing-amount">
+                        <span class="currency">Rp</span>
+                        <span class="price">299rb</span>
+                        <span class="period">/bulan</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Akses semua 50+ kursus</li>
+                        <li>Video on-demand + live class</li>
+                        <li>Grup komunitas + mentoring</li>
+                        <li>Sertifikat premium</li>
+                        <li>Priority support 24/7</li>
+                        <li>Template & tools bisnis</li>
+                        <li>Garansi uang kembali 30 hari</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%;">Mulai Professional</button>
+                </div>
+                <div class="pricing-card reveal reveal-delay-3">
+                    <h3>Business</h3>
+                    <p class="desc">Untuk tim dan agency</p>
+                    <div class="pricing-amount">
+                        <span class="currency">Rp</span>
+                        <span class="price">799rb</span>
+                        <span class="period">/bulan</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Semua fitur Professional</li>
+                        <li>5 akun anggota tim</li>
+                        <li>Private mentoring session</li>
+                        <li>White-label sertifikat</li>
+                        <li>Dedicated account manager</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">Mulai Business</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Pertanyaan yang Sering Diajukan</h2>
+                <p>Semua yang perlu kamu ketahui sebelum mulai belajar</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Apakah saya cocok ikut kursus ini meski pemula total?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tentu! Kursus kami dirancang untuk semua level. Kurikulum dimulai dari dasar sekali, jadi kamu tidak perlu punya pengalaman sama sekali. Banyak alumni kami justru berangkat dari nol dan kini sukses menjalankan bisnis online mereka sendiri.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Berapa lama akses kursus yang saya dapatkan?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kamu mendapatkan akses seumur hidup untuk semua kursus yang kamu beli. Termasuk semua update materi di masa depan tanpa biaya tambahan. Belajar kapan saja, di mana saja, sesuai jadwalmu.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Apakah ada jaminan uang kembali?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya! Kami memberikan garansi uang kembali 100% dalam 30 hari jika kamu merasa kursus tidak sesuai ekspektasi. Tanpa pertanyaan rumit, refund diproses dalam 3-5 hari kerja.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Bagaimana cara mendapatkan sertifikat?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Setelah menyelesaikan minimal 90% materi kursus dan lulus kuis evaluasi, sertifikat digital akan otomatis terbit dan bisa langsung diunduh. Sertifikat bisa dibagikan ke LinkedIn dan digunakan untuk melamar pekerjaan.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Apakah ada live class atau hanya video rekaman?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Paket Professional dan Business mendapatkan akses live class mingguan dengan mentor. Kamu bisa bertanya langsung dan diskusi real-time. Semua live class juga direkam dan bisa ditonton ulang kapan saja.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-inner reveal">
+                <h2>Siap Mengubah Hidupmu?</h2>
+                <p>Bergabung dengan 2,500+ alumni yang telah sukses membangun bisnis dan karir di dunia digital.</p>
+                <a href="#pricing" class="btn btn-white btn-lg">Daftar Sekarang - Mulai dari Rp99rb</a>
+                <p style="margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.5);">Garansi uang kembali 30 hari. Tanpa resiko.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">S</div>
+                        SkillUp Academy
+                    </a>
+                    <p>Platform belajar digital marketing dan bisnis online terpercaya sejak 2020. Misi kami membantu 1 juta orang Indonesia sukses di dunia digital.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Kursus</h4>
+                    <ul>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">E-Commerce</a></li>
+                        <li><a href="#">SEO Masterclass</a></li>
+                        <li><a href="#">Social Media Ads</a></li>
+                        <li><a href="#">Copywriting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Perusahaan</h4>
+                    <ul>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Partner</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkillUp Academy. All rights reserved.</p>
+                <p>Made with care in Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
